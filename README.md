@@ -17,13 +17,15 @@ Modeled are actual words as **lower words** like *whakarunga* and as correspondi
 ├── Maori.pdf      project documentation
 ├── README.md      short intro
 ├── data/          input and test data
-│   └── ...
-└── src/           XFST source files
+│   └── ...        (test-files like maori-top200.txt)
+└── src/           .xfst source files
+    ├── BuildingBlocks/
+    │   └── ...    (.xfts-files for e.g. prefixes)
     ├── maori.xfst
     └── maori-lexc.xfst
 ```
 ### Installation and Usage
-Place these files (e.g. via `git clone https://github.com/marievk/maori-xfst/` (TBD: try)) in the same local folder as the xfst software. 
+Place these files (e.g. via `git clone https://github.com/marievk/maori-xfst/`) in the same local folder as the xfst software. 
 
 Navigate to the target location (eg. via `cd` in Linux), start xfst and call the main file maori.xfst, which is the main entry point of this project (additional files should remain at the paths specified in the project structure): 
 
@@ -32,7 +34,7 @@ Navigate to the target location (eg. via `cd` in Linux), start xfst and call the
 source maori.xfst
 ```
 
-After loading the entry-point, the project is running. Default output are lower words, followed by upper words. Both lists are sorted alphabetically. Other standard-outputs can be found in maori.xfst. These lines could be uncommented via removing the trailing "!". 
+After loading the entry-point, the project is running. Default output are lower words, followed by upper words. Both lists are sorted alphabetically. Other standard-outputs can be found in maori.xfst. These lines could be uncommented via removing the trailing `!`. 
 
 ### Implementation / Examples
 *TBD*

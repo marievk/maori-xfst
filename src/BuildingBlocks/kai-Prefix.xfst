@@ -1,0 +1,37 @@
+Multichar_Symbols
+    +V +N +ag
+    @P.PREF.Kai@
+    @D.PREF.Kai@
+    @R.PREF.Kai@
+
+! kai-  as agentive prefix
+! added to (transitive) action verbs to form nouns, denoting a human agent
+
+LEXICON root
+@P.PREF.Kai@ag+:@P.PREF.Kai@kai KaiVerbs ;
+                                KaiVerbs ;
+
+LEXICON KaiVerbs
+peita  KaiAgentiv ;  ! V: "to paint" (loan) => kaipeita "Maler/in"
+tuhi   KaiAgentiv ;  ! V: "schreiben" => kaituhi "Schriftsteller/in, Autor/in"
+
+LEXICON KaiAgentiv
+@R.PREF.Kai@ NTag ;
+@D.PREF.Kai@ VTag ;
+
+LEXICON NTag
++N:0 # ;
+
+LEXICON VTag
++V:0   #;
+
+! ---------------------------------------------
+! cd .../xfsm_api/linux64/bin/
+! ./xfst
+! read lexc .../BuildingBlocks/kai-Prefix.xfst
+! print lower-words | sort
+! print upper-words | sort
+!apply up peita ;
+!apply up kaipeita ;
+!apply down peita+V
+!apply down ag+peita+N

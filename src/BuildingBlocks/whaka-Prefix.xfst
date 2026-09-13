@@ -1,0 +1,38 @@
+Multichar_Symbols
+       +V +Loc
+       @P.PREF.Whaka@
+       @D.PREF.Whaka@
+       @C.PREF@
+
+! whaka- prefix as causative for verbs and with a directional function for locatives
+
+LEXICON Root
+Prefix;
+Locatives;   ! additional branch (additional prefix applies to most of the entries for this major class)
+
+LEXICON Prefix
+@P.PREF.Whaka@caus+:@P.PREF.Whaka@whaka WhakaVerbs; ! also adds tag: +caus
+                                        WhakaVerbs; ! whaka- prefix is optional for WhakaVerbs
+@P.PREF.Whaka@:@P.PREF.Whaka@whaka Locatives;  ! (optional) whaka- prefix for locatives (no additional tag)
+
+LEXICON Locatives
+runga  LocTag ; ! "up, on top", whakarunga "upwards, up, towards the top."
+muri   LocTag ; ! "the rear, behind, at the back of", whakamuri: "backwards, behind, towards the rear."
+@D.PREF.Whaka@tai  LocTag ; ! "the sea, coast" ! whaka-prefix disallowed
+
+LEXICON LocTag
++Loc:0   #;
+
+LEXICON WhakaVerbs
+tupu   VTag ;  ! V: "to grow, increase", whakatupu "cause to grow"
+aro    VTag ; ! V: "take notice of, pay attention to", whakaaro: "take notice of, pay attention to"
+
+LEXICON VTag
++V:0   #;
+
+! ---------------------------------------------
+! cd .../xfsm_api/linux64/bin/
+! ./xfst
+! read lexc .../BuildingBlocks/whaka-Prefix.xfst
+! print lower-words | sort
+! print upper-words | sort

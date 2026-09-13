@@ -1,0 +1,24 @@
+Multichar_Symbols
+    V+ CV^R+ Con Vow
+
+! fixed-lengt initial reduplication: CV, V->V, like like Tagalog in excercise  (pdf 496)
+
+LEXICON ROOT
+IniVDup ; ! V => V
+
+LEXICON IniVDup
+CV^R+:ConVow CloseIniVDup  ;
+             CloseIniVDup  ;
+
+LEXICON CloseIniVDup
+patu VTag ;   ! "trike, hit, beat, assault, kill" -> papatu "beat one another, clash, fight one another."
+taki VTag ;   ! "to lead, challenge" -> tataki "to lead/guide in succession"
+
+LEXICON VTag
++V:0   #;
+
+! ---------------------------------------------
+! cd .../xfsm_api/linux64/bin/
+! ./xfst
+! read lexc .../BuildingBlocks/Partial-Dup-lexc.xfst
+! print lower-words | sort

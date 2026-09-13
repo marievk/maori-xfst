@@ -1,0 +1,39 @@
+! not inluded as of runtime, creates 57.329 arcs
+
+clear stack ;
+
+! add path, if required:
+read lexc < Partial-FinDup-lexc.xfst ;
+
+! final partial reduplication, stemCV => stemCVCV for diptonghs,
+! and stemConV1V2 => stemCV1V2V1V2 for two vowels
+define CopyVowFin [V1 -> ā || ā Con _ .#. ,, V1 -> ē || ē Con _ .#. ,, V1 -> ī || ī Con _ .#. ,,
+                   V1 -> ō || ō Con _ .#. ,, V1 -> ū || ū Con _ .#. ,,
+                   V1 -> a || a ? Con _ V2 .#. ,, V1 -> e || e ? Con _ V2 .#. ,,
+                   V1 -> i || i ? Con _ V2 .#. ,, V1 -> o || o ? Con _ V2 .#. ,,
+                   V1 -> u || u ? Con _ V2 .#. ,,
+                   V2 -> a || a Con ? _ .#. ,, V1 -> e || e Con ? _ .#. ,,
+                   V2 -> i || i Con ? _ .#. ,, V1 -> o || o Con ? _ .#. ,,
+                   V2 -> u || u Con ? _ .#.] ;
+
+define CopyConFin [Con -> h || h [?|? ?] _ ,, Con -> k || k [?|? ?] _ ,,
+                   Con -> m || m [?|? ?] _ ,, Con -> n || n [?|? ?] _ ,,
+                   Con -> p || p [?|? ?] _ ,, Con -> r || r [?|? ?] _ ,,
+                   Con -> t || t [?|? ?] _ ,, Con -> w || w [?|? ?] _ ] ;
+
+read regex CopyVowFin .o. CopyConFin;
+
+turn stack ;
+compose net ;
+
+echo upper-words:
+print upper-words ;
+echo ~~~
+
+echo lower-words:
+print lower-words ;
+
+! ---------------------------------------------
+! cd .../xfsm_api/linux64/bin/
+! ./xfst
+! source .../BuildingBlocks/Partial-FinDup.xfst

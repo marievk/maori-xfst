@@ -1,0 +1,32 @@
+! not inluded as of runtime, creates 57.329 arcs
+
+Multichar_Symbols
+    Con Vow +R2 +R3 V1 V2
+
+! final partial reduplikation: mākū => mākūkū, putai => putaitai, just single examples
+
+LEXICON ROOT
+FinVDup ; ! V => V
+
+LEXICON FinVDup
+mākū  CloseFinVDup2  ; ! => mākūkū
+pūtai CloseFinVDup3  ; ! N: "sea foam, spray, misty driving rain" => pūtaitai "Anas rhynchotis - a duck living in wetlands" (both nouns)
+
+! fixed-lengt final reduplication: CV
+LEXICON CloseFinVDup2
++R2:ConV1 VTag  ;
+          VTag  ;
+
+! fixed-lengt final reduplication: CVV
+LEXICON CloseFinVDup3
++R3:ConV1V2 VTag  ;
+            VTag  ;
+
+LEXICON VTag
++V:0   #;
+
+! ---------------------------------------------
+! cd .../xfsm_api/linux64/bin/
+! ./xfst
+! read lexc .../BuildingBlocks/Partial-FinDup-lexc.xfst
+! print lower-words | sort

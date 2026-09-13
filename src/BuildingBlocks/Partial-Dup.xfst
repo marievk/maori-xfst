@@ -1,0 +1,29 @@
+clear stack ;
+
+! add path, if required
+read lexc < Partial-Dup-lexc.xfst ;
+
+! initial partial reduplication V -> V
+define CopyConInit [Con -> h || _ Vow h,, Con -> k || _ Vow k,, Con -> m || _ Vow m,,
+                Con -> n || _ Vow n,, Con -> p || _ Vow p,, Con -> r || _ Vow r,,
+                Con -> t || _ Vow t,, Con -> w || _ Vow w] ;
+define CopyVowInit [Vow -> a || _ ? a ,, Vow -> e || _ ? e ,,
+                Vow -> i || _ ? i ,, Vow -> o || _ ? o ,,
+                Vow -> u || _ ? u] ;
+
+read regex CopyConInit .o. CopyVowInit;
+
+turn stack ;
+compose net ;
+
+echo upper-words:
+print upper-words ;
+echo ~~~
+
+echo lower-words:
+print lower-words ;
+
+! ---------------------------------------------
+! cd .../xfsm_api/linux64/bin/
+! ./xfst
+! source .../BuildingBlocks/Partial-Dup.xfst

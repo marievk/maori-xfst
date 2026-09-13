@@ -1,0 +1,95 @@
+Multichar_Symbols
+        +V +pass
+
+! 14 passive endings which are added to verbs:
+! -a, -na, -nga, -ia, -tia, -hia, -ngia, -kia, -mia, -ria, -ina, -whia,  -whina, -kina.
+
+LEXICON ROOT
+Verbs ;
+
+LEXICON Verbs
+a       iaPassive ;   ! "to drive away" -> aia
+arahi   naPassive ;   ! "to guide" -> arahina
+aroha   inaPassive ;  ! "to love""-> arohaina
+aroha   tiaPassive ;  ! -> arohatia
+hahau   riaPassive ;  ! "to seek"-> hahauria
+hi      aPassive ;    ! "to fish with a hook" -> hia
+hura    hiaPassive ;  ! "to expose" -> hurahia
+hura    ngiaPassive ; ! -> hurangia
+maka    aPassive ;    ! "to throw away" -> makā, rewrite: aa => ā
+mea     tiaPassive ;  ! "to do" -> meatia
+waiho   0Passive ;    ! "leave" -> waiho
+wakama  kiaPassive ;  ! "to make clean" -> wakamakia
+wete    kinaPassive ; ! "untie, release" -> wetekina ‘be untied/released’
+whangai ngaPassive ;  ! "to feed" -> whangainga
+whao    whiaPassive ; ! "insert, fill" -> whaowhia "be inserted/driven in"
+whao    whinaPassive; ! ->  whaowhina "be put into / be filled"
+
+LEXICON aPassive
++pass:a VTag ;
+        VTag ;
+
+LEXICON naPassive
++pass:na VTag ;
+         VTag ;
+
+LEXICON ngaPassive
++pass:nga VTag ;
+          VTag ;
+
+LEXICON iaPassive
++pass:ia VTag ;
+         VTag ;
+
+LEXICON tiaPassive
++pass:tia VTag ;
+          VTag ;
+
+LEXICON hiaPassive
++pass:hia VTag ;
+          VTag ;
+
+LEXICON ngiaPassive
++pass:ngia VTag ;
+           VTag ;
+
+LEXICON kiaPassive
++pass:kia VTag ;
+          VTag ;
+
+LEXICON miaPassive
++pass:mia VTag ;
+          VTag ;
+
+LEXICON riaPassive
++pass:ria VTag ;
+          VTag ;
+
+LEXICON inaPassive
++pass:ina VTag ;
+          VTag ;
+
+LEXICON whiaPassive
++pass:whia VTag ;
+           VTag ;
+
+LEXICON whinaPassive
++pass:whina VTag ;
+            VTag ;
+
+LEXICON kinaPassive
++pass:kina VTag ;
+           VTag ;
+
+LEXICON 0Passive
++pass:0 VTag ;
+        VTag ;
+
+LEXICON VTag
++V:0  # ;
+
+! ---------------------------------------------
+! cd .../xfsm_api/linux64/bin/
+! ./xfst
+! read lexc .../BuildingBlocks/Passive-lexc.xfst
+! print lower-words | sort

@@ -1,0 +1,20 @@
+clear stack ;
+
+! add path, if required:
+read lexc < Passive-lexc.xfst ;
+
+! Rewrite maka -> makā
+read regex ({aa} -> ā || _ .#. ) ;
+
+compose net ;
+
+echo upper-words:
+print upper-words | sort ;
+echo ~~~
+echo lower-words:
+print lower-words | sort ;
+
+! ---------------------------------------------
+! cd .../xfsm_api/linux64/bin/
+! ./xfst
+! source .../BuildingBlocks/Passive.xfst

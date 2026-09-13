@@ -1,0 +1,35 @@
+Multichar_Symbols
+    ^[ ^] ^R+ +V +N
+
+! Full-stem reduplication: two forms affecting verbs
+
+LEXICON Root
+0:^[{ VerbStems ;    ! full reduplication V => V
+0:^[{ VerbDupNomin ; ! full reduplication V => N
+
+! Verbs with full-stem reduplication (verb => verb)
+LEXICON VerbStems
+hoko  CloseVBrack ; ! "buy, sell, trade" -> hokohoko "trade, barter, export"
+kau   CloseVBrack ; ! "swim", kau(kau)
+
+! Tagging for ordinary & reduplicated verb form
+LEXICON CloseVBrack
++V:}^]     # ; ! ordinary form
+^R+V:}^2^] # ; ! reduplicated form
+
+! Verbs with full-stem reduplication (verb => noun)
+LEXICON VerbDupNomin
+meke  VDupNBrack ; ! meke "punch" => mekemeke "boxing" (also used as verb)
+
+! Tagging for ordinary verb & nominalization via reduplication
+LEXICON VDupNBrack
++V:}^]     # ;  ! ordinary form (verb)
+^R+N:}^2^] # ;  ! reduplicated form: verb => noun
+
+END
+
+! ---------------------------------------------
+! cd .../xfsm_api/linux64/bin/
+! ./xfst
+! read lexc .../BuildingBlocks/Full-Dup.xfst
+! print lower-words | sort

@@ -1,0 +1,22 @@
+clear stack ;
+
+! add path, if required
+read lexc < Full-Dup-lexc.xfst ;
+
+print lower-words ;
+
+compile-replace lower ;
+! transfers lower words ^[{kau}^2^] => kaukau
+
+turn stack ;
+compose net ;
+
+print lower-words
+echo ~~~~
+print upper-words
+
+
+! ---------------------------------------------
+! cd .../xfsm_api/linux64/bin/
+! ./xfst
+! source .../BuildingBlocks/Full-Dup.xfst

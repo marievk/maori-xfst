@@ -5,7 +5,7 @@ This project provides a lexicon for generating Māori words as compositions of m
 
 ### Description
 
-Modeled are actual words as **lower words** like *whakarunga* and as corresponding **upper words** their lexical form, as an abstract representation, in this example *Caus+runga+Locativ*. 
+Modeled are actual words as **lower words** like *whakarunga* and as corresponding **upper words** their lexical form, as an abstract representation, in this example *caus+runga+Locativ*. 
 
 ### Requirements
 * xfst Software (e.g. Kenneth R. Beesley and Lauri Karttunen. Finite State Morphology. CSLI Studies in Computational Linguistics. 2003, formerly http://fsmbook.com) 
@@ -14,18 +14,17 @@ Modeled are actual words as **lower words** like *whakarunga* and as correspondi
 
 ### Project Structure
 ```text
-├── Maori.pdf      project documentation
 ├── README.md      short intro
 ├── data/          input and test data
-│   └── ...        (test-files like maori-top200.txt)
+│   └── ...        (test-files like maori-words.txt)
+├── docs/          documentation
 └── src/           .xfst source files
-    ├── BuildingBlocks/
-    │   └── ...    (.xfts-files for e.g. prefixes)
+    ├── blocks/    BuildingBlocks
     ├── maori.xfst
     └── maori-lexc.xfst
 ```
 ### Installation and Usage
-Place these files (e.g. via `git clone https://github.com/marievk/maori-xfst/`) in the same local folder as the xfst software. 
+Place these files (e.g. via `git clone https://github.com/marievk/maori-xfst/`) ideally in the same local folder as the xfst software. 
 
 Navigate to the target location (eg. via `cd` in Linux), start xfst and call the main file maori.xfst, which is the main entry point of this project (additional files should remain at the paths specified in the project structure): 
 
@@ -36,15 +35,17 @@ source maori.xfst
 
 After loading the entry-point, the project is running. Default output are lower words, followed by upper words. Both lists are sorted alphabetically. Other standard-outputs can be found in maori.xfst. These lines could be uncommented via removing the trailing `!`. 
 
-### Implementation / Examples
-*TBD*
+### Overview 
+The following lexica structure has been created (simplified representation): 
+[Contents of the main files: structure](docs/word-forms.png)
 
 ### Known Limitations
-*TBD*
+* Scope focuses on verbal morphology (including the neigbouring word classes universals and statives). 
+* Just some test data is available in this repo for copyright reasons.
 
 ### References 
 *TBD: check* <br> 
-The [Te&nbsp;Aka&nbsp;Māori](https://maoridictionary.co.nz) online dictionary was used as gold standard due to the involvement of native speakers. Furthermore, examples were taken from: 
+The [Te&nbsp;Aka&nbsp;Māori](https://maoridictionary.co.nz) online dictionary was used as gold standard. Furthermore, examples were taken from: 
 * Winifred Bauer. Maori. Descriptive Grammars. Routledge, 1993.
 * Bruce Biggs. The Structure of New Zealand Maaori. Anthropological Linguistics, 3(3):1–54, 1961. 
 * Mary Boyce. A Corpus of Modern Spoken Māori. PhD thesis, Te Herenga Waka-Victoria University of Wellington, 2006. 

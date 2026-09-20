@@ -26,5 +26,5 @@ LEXICON NumTag
 ! ---------------------------------------------
 ! cd .../xfsm_api/linux64/bin/
 ! ./xfst
-! read lexc .../BuildingBlocks/tua-Prefix.xfst
+! read lexc .../blocks/tua-Prefix.xfst
 ! print upper-words; print lower-words

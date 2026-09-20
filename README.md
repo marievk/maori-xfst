@@ -1,11 +1,11 @@
 **Computational Morphology, Summer 2026**
 ## Māori via xfst
 
-This project provides a lexicon for generating Māori words as compositions of morphemes, bounded by constraints. It is focusing on verbs/universals to demonstrate Xfst (Xerox finite-state tool) functionality on the one hand, and on a wide coverage of common words on the other hand. 
+This project generates Māori words as compositions of morphemes, bounded by constraints. It is focusing on verbs/universals to demonstrate Xfst (Xerox finite-state tool) functionality on the one hand, and on a adequate coverage of common words on the other hand. 
 
 ### Description
 
-Modeled are actual words as **lower words** like *whakarunga* and as corresponding **upper words** their lexical form, as an abstract representation, in this example *caus+runga+Locativ*. 
+Modeled are actual words as **lower words** like *'whakarunga'* (upwards, towards the top) and as corresponding **upper words** their lexical form, as an abstract representation. In this example, *'caus+runga+Loc'* denotes the *whaka-* causative on the locational *runga* (up, on top). 
 
 ### Requirements
 * xfst Software (e.g. Kenneth R. Beesley and Lauri Karttunen. Finite State Morphology. CSLI Studies in Computational Linguistics. 2003, formerly http://fsmbook.com) 
@@ -14,13 +14,13 @@ Modeled are actual words as **lower words** like *whakarunga* and as correspondi
 
 ### Project Structure
 ```text
-├── README.md      short intro
-├── data/          input and test data
-│   └── ...        (test-files like maori-words.txt)
-├── docs/          documentation
-└── src/           .xfst source files
-    ├── blocks/    BuildingBlocks
+├── README.md       short intro
+├── data/...        test data
+├── docs/...        documentation
+└── src/            .xfst source files
+    ├── blocks/...  BuildingBlocks
     ├── maori.xfst
+    ├── maori-guesser.xfst
     └── maori-lexc.xfst
 ```
 ### Installation and Usage
@@ -36,8 +36,8 @@ source maori.xfst
 After loading the entry-point, the project is running. Default output are lower words, followed by upper words. Both lists are sorted alphabetically. Other standard-outputs can be found in maori.xfst. These lines could be uncommented via removing the trailing `!`. 
 
 ### Overview 
-The following lexica structure has been created (simplified representation): 
-[Contents of the main files: structure](docs/word-forms.png)
+The following branching structure has been created (simplified representation): 
+![Contents of the main files: structure](docs/word-forms.png) 
 
 ### Known Limitations
 * Scope focuses on verbal morphology (including the neigbouring word classes universals and statives). 

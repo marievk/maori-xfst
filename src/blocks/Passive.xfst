@@ -17,4 +17,4 @@ print lower-words | sort ;
 ! ---------------------------------------------
 ! cd .../xfsm_api/linux64/bin/
 ! ./xfst
-! source .../BuildingBlocks/Passive.xfst
+! source .../blocks/Passive.xfst

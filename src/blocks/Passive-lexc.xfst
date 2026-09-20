@@ -91,5 +91,5 @@ LEXICON VTag
 ! ---------------------------------------------
 ! cd .../xfsm_api/linux64/bin/
 ! ./xfst
-! read lexc .../BuildingBlocks/Passive-lexc.xfst
+! read lexc .../blocks/Passive-lexc.xfst
 ! print lower-words | sort

@@ -33,6 +33,6 @@ LEXICON VTag
 ! ---------------------------------------------
 ! cd .../xfsm_api/linux64/bin/
 ! ./xfst
-! read lexc .../BuildingBlocks/whaka-Prefix.xfst
+! read lexc .../blocks/whaka-Prefix.xfst
 ! print lower-words | sort
 ! print upper-words | sort

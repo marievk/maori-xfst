@@ -28,7 +28,7 @@ LEXICON VTag
 ! ---------------------------------------------
 ! cd .../xfsm_api/linux64/bin/
 ! ./xfst
-! read lexc .../BuildingBlocks/kai-Prefix.xfst
+! read lexc .../blocks/kai-Prefix.xfst
 ! print lower-words | sort
 ! print upper-words | sort
 !apply up peita ;

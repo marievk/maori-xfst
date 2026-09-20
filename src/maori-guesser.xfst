@@ -1,0 +1,36 @@
+clear stack;
+
+! Māori Guesser: tries to analyze words independently from a dictionary
+! PASS: returns the tested term - probably a valid Māori term
+! FAIL: returns "???"
+
+! (1) Restricted alphabet
+define C [h | k | m | n | ng | p | r | t | w | wh] ;
+define V [a | e | i | o | u | ā | ē | ī | ō | ū] ;
+
+! (2) restrict syllable structure V, VV, CV, CVV => (C)V(V), here: Root instead of Word
+define Syllable (C) V (V) ;
+define Root Syllable+ ;
+regex Root;
+
+echo ~~~~ should pass
+apply up māori;
+apply up kōwhatu;
+apply up wāhanga;
+apply up hianui;
+apply up a;
+apply up wa;
+apply up ao;
+apply up tūrangawaewae ;
+
+echo ~~~~ bad data:
+apply up obä
+apply up agg ;
+!apply up < .../data/maori-bad.txt
+
+
+! ---------------------------------------------
+! cd .../xfsm_api/linux64/bin/
+! ./xfst
+! source .../maori-guesser.xfst
+! ---------------------------------------------

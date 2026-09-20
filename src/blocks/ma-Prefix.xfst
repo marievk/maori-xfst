@@ -1,0 +1,21 @@
+Multichar_Symbols
+    +V
+    @P.PREF.Ma@ @D.PREF.Ma@ @R.PREF.Ma@
+
+! ma- as prefix (historic: building statives in polonesian languages, not yet productive)
+
+LEXICON root
+@P.PREF.Ma@:@P.PREF.Ma@ma MaTerms;  ! for verbs which allow the ma-prefix (separate lexicon)
+                          MaTerms;  ! ... for making the prefix optional
+
+LEXICON MaTerms
+hora VTag ; ! V: "to spread out, display, make public" -> mahora V: "be spread out, laid out, served up"
+
+LEXICON VTag
++V:0   #;
+
+! ---------------------------------------------
+! cd .../xfsm_api/linux64/bin/
+! ./xfst
+! read lexc .../blocks/ma-Prefix.xfst
+! print upper-words; print lower-words

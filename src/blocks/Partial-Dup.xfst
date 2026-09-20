@@ -26,4 +26,4 @@ print lower-words ;
 ! ---------------------------------------------
 ! cd .../xfsm_api/linux64/bin/
 ! ./xfst
-! source .../BuildingBlocks/Partial-Dup.xfst
+! source .../blocks/Partial-Dup.xfst

@@ -20,5 +20,5 @@ LEXICON VTag
 ! ---------------------------------------------
 ! cd .../xfsm_api/linux64/bin/
 ! ./xfst
-! read lexc .../BuildingBlocks/Partial-Dup-lexc.xfst
+! read lexc .../blocks/Partial-Dup-lexc.xfst
 ! print lower-words | sort

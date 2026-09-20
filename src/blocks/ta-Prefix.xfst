@@ -18,7 +18,7 @@ LEXICON VTag
 ! ---------------------------------------------
 ! cd .../xfsm_api/linux64/bin/
 ! ./xfst
-! read lexc .../BuildingBlocks/ta-Prefix.xfst
+! read lexc .../blocks/ta-Prefix.xfst
 ! print lower-words | sort
 ! print upper-words | sort
 ! print upper-words; print lower-words

@@ -44,12 +44,12 @@ The following branching structure has been created (simplified representation):
 * Just some test data is available in this repo for copyright reasons.
 
 ### References 
-*TBD: check* <br> 
 The [Te&nbsp;Aka&nbsp;Māori](https://maoridictionary.co.nz) online dictionary was used as gold standard. Furthermore, examples were taken from: 
+* Suzanne Aubert. New and Complete Manual of Maori Conversation. Wellington, 1885.
 * Winifred Bauer. Maori. Descriptive Grammars. Routledge, 1993.
 * Bruce Biggs. The Structure of New Zealand Maaori. Anthropological Linguistics, 3(3):1–54, 1961. 
 * Mary Boyce. A Corpus of Modern Spoken Māori. PhD thesis, Te Herenga Waka-Victoria University of Wellington, 2006. 
-* K. T. Harawira. Teach Yourself Maori. Reed, 2. ed., reprint. edition, 1974. 
+* Kahikatoa Takimoana Harawira. Teach Yourself Maori. Reed, 2. ed., reprint. edition, 1974. 
 * Ray Harlow. Māori: A Linguistic Introduction. Cambridge University Press, 2007. 
 
 ### License

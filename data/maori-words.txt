@@ -87,9 +87,9 @@ matikuku
 mātotoru
 matua
 mau
-maui
 mauī
 maunga
+mauri
 me
 me
 mea
@@ -122,8 +122,8 @@ patu
 pei
 pirau
 pō
+pone
 poto
-prone
 pua
 puehu
 puku
@@ -189,11 +189,11 @@ wero
 whā
 whaea
 whāiti
+whakaaro
 whakāea
-whakāro
 whānui
 whawhai
-whekau
+whēkau
 whero
 whetū
 wheua

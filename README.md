@@ -44,7 +44,7 @@ The following branching structure has been created (simplified representation):
 * Just some test data is available in this repo for copyright reasons.
 
 ### References 
-The [Te&nbsp;Aka&nbsp;Māori](https://maoridictionary.co.nz) online dictionary was used as gold standard. Furthermore, examples were taken from: 
+The [Te&nbsp;Aka&nbsp;Māori](https://maoridictionary.co.nz) online dictionary was used as gold standard. Furthermore, examples were mainly taken from: 
 * Suzanne Aubert. New and Complete Manual of Maori Conversation. Wellington, 1885.
 * Mary Boyce. A Corpus of Modern Spoken Māori. PhD thesis, Te Herenga Waka-Victoria University of Wellington, 2006. 
 * Kahikatoa Takimoana Harawira. Teach Yourself Maori. Reed, 2. ed., reprint. edition, 1974. 

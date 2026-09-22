@@ -46,11 +46,9 @@ The following branching structure has been created (simplified representation):
 ### References 
 The [Te&nbsp;Aka&nbsp;Māori](https://maoridictionary.co.nz) online dictionary was used as gold standard. Furthermore, examples were taken from: 
 * Suzanne Aubert. New and Complete Manual of Maori Conversation. Wellington, 1885.
-* Winifred Bauer. Maori. Descriptive Grammars. Routledge, 1993.
-* Bruce Biggs. The Structure of New Zealand Maaori. Anthropological Linguistics, 3(3):1–54, 1961. 
 * Mary Boyce. A Corpus of Modern Spoken Māori. PhD thesis, Te Herenga Waka-Victoria University of Wellington, 2006. 
 * Kahikatoa Takimoana Harawira. Teach Yourself Maori. Reed, 2. ed., reprint. edition, 1974. 
-* Ray Harlow. Māori: A Linguistic Introduction. Cambridge University Press, 2007. 
+* Apirana Ngata. Complete Manual of Maori Grammar and Conversation with Vocabulary. AMS Press, reprint 1979.
 
 ### License
 This project is licensed under the

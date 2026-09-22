@@ -1,0 +1,66 @@
+clear stack ;
+set show-flags OFF;
+
+! (1) restrict alphabet
+define C [h | k | m | n | ng | p | r | t | w | wh] ;
+define V [a | e | i | o | u | ā | ē | ī | ō | ū] ;
+
+! (2) restrict syllable structure V, VV, CV, CVV => (C)V(V)
+define Syllable (C) V (V) ;
+define Word Syllable+ ;
+
+! Change path, if required:
+read lexc < maori-lexc.xfst ;
+
+! Replacement rule: full reduplication: ^[{kau}^2^] => kaukau
+compile-replace lower ;
+
+!(45) Rewrite rule: aāe => aae (whakaae)
+read regex ({aāe} -> {aae}) ;
+!read regex ({aāe} -> {aāe} .o. ... ) ;v
+
+! (57.) Rewrite aa=>ā  (passive: maka => makā, NOT makaa), position: word ending
+read regex ({aa} -> ā || _ .#. ) ;
+
+! (50) initial partial reduplication CVstem => CVCVstem
+define CopyCon [Con -> h || _ Vow h,, Con -> k || _ Vow k,, Con -> m || _ Vow m,,
+                Con -> n || _ Vow n,, Con -> p || _ Vow p,, Con -> r || _ Vow r,,
+                Con -> t || _ Vow t,, Con -> w || _ Vow w] ;
+define CopyVow [Vow -> a || _ ? a ,, Vow -> e || _ ? e ,,
+                Vow -> i || _ ? i ,, Vow -> o || _ ? o ,,
+                Vow -> u || _ ? u] ;
+! double comma seperates the whole rule (one: just one side)
+read regex CopyCon .o. CopyVow;
+
+turn stack ;
+compose net ;
+
+apply up taihoa ;
+
+! ---------------------------------------------
+! Sample checks - change paths, where needed:
+! 1) Basic checks: valid and invalid terms, sample surface vocables to lexical structure:
+! echo ~~~~ should pass
+! apply up māori ;
+! apply up irirangi ;
+! apply up karauna ;
+! apply up kaumātua ;
+! echo ~~~~ bad data:
+! apply up obä ;
+! apply up choll ;
+! apply up < .../data/maori-bad.txt
+
+! 2) List checks
+! echo testing correct words ;
+! apply up < ...data/maori-words.txt
+! echo testing invalid terms ;
+! apply up < .../data/maori-bad.txt
+
+! 3) Are the top200 (Boyce2006) tagged?
+! echo testing MBC top 200 ;
+! apply up < .../data/maori-top200.txt > .../maori-todos.txt
+
+! ---------------------------------------------
+! cd .../xfsm_api/linux64/bin/
+! ./xfst
+! source .../maori.xfst

@@ -11,7 +11,7 @@ CV^R+:ConVow CloseIniVDup  ;
              CloseIniVDup  ;
 
 LEXICON CloseIniVDup
-patu VTag ;   ! "trike, hit, beat, assault, kill" -> papatu "beat one another, clash, fight one another."
+patu VTag ;   ! "to strike, hit, beat, assault, kill" -> papatu "beat one another, clash, fight one another."
 taki VTag ;   ! "to lead, challenge" -> tataki "to lead/guide in succession"
 
 LEXICON VTag

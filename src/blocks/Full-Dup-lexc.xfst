@@ -31,5 +31,5 @@ END
 ! ---------------------------------------------
 ! cd .../xfsm_api/linux64/bin/
 ! ./xfst
-! read lexc .../blocks/Full-Dup.xfst
+! read lexc .../blocks/Full-Dup-lexc.xfst
 ! print lower-words | sort

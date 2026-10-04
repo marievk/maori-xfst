@@ -1,0 +1,57 @@
+Multichar_Symbols +V +pass
+@P.PASSa.ON@    @R.PASSa@    @D.PASSa@
+@P.PASSna.ON@   @R.PASSna@   @D.PASSna@
+@P.PASSnga.ON@  @R.PASSnga@  @D.PASSnga@
+@P.PASSia.ON@   @R.PASSia@   @D.PASSia@
+@P.PASStia.ON@  @R.PASStia@  @D.PASStia@
+@P.PASShia.ON@  @R.PASShia@  @D.PASShia@
+@P.PASSngia.ON@ @R.PASSngia@ @D.PASSngia@
+@P.PASSkia.ON@  @R.PASSkia@  @D.PASSkia@
+@P.PASSmia.ON@  @R.PASSmia@  @D.PASSmia@
+@P.PASSria.ON@  @R.PASSria@  @D.PASSria@
+@P.PASSina.ON@  @R.PASSina@  @D.PASSina@
+@P.PASSwhia.ON@ @R.PASSwhia@   @D.PASSwhia@
+@P.PASSwhina.ON@ @R.PASSwhina@ @D.PASSwhina@
+@P.PASSkina.ON@  @R.PASSkina@  @D.PASSkina@
+! 14 passive endings which are added to verbs:
+! -a, -na, -nga, -ia, -tia, -hia, -ngia, -kia, -mia, -ria, -ina, -whia,  -whina, -kina.
+
+LEXICON ROOT
+Verbs ;
+
+LEXICON Verbs
+hi@P.PASSa.ON@     Passive ; ! "to fish with a hook" -> hia
+a@P.PASSia.ON@     Passive ; ! "to drive away"       -> aia
+toko@P.PASSna.ON@  Passive ; ! "to propel by poles" -> tokona
+kai@P.PASSnga.ON@  Passive ; ! "to eat" -> kainga
+aroha@P.PASSina.ON@@P.PASStia.ON@ Passive ; ! "to love""-> arohaina, arohatia
+whao@P.PASSna.ON@@P.PASSngia.ON@@P.PASSria.ON@@P.PASSwhia.ON@@P.PASSwhina.ON@  Passive ;
+! "insert, fill"-> whaona, whaongia, whaoria, whaowhia, whaowhina
+! Similar to XfstBook top 8.5.6 Forward-Looking Feature Requireemnts (pdf: 491)
+
+LEXICON Passive
+@R.PASSa@+pass:@R.PASSa@a        VTag ;  ! -a
+@R.PASSna@+pass:@R.PASSna@na     VTag ;  ! -na
+@R.PASSnga@+pass:@R.PASSnga@nga  VTag ;  ! -nga
+@R.PASSia@+pass:@R.PASSia@ia     VTag ;  ! -ia
+@R.PASStia@+pass:@R.PASStia@tia  VTag ;  ! -tia
+@R.PASShia@+pass:@R.PASShia@hia  VTag ;  ! -hia
+@R.PASSngia@+pass:@R.PASSngia@ngia  VTag ;  ! -ngia
+@R.PASSkia@+pass:@R.PASSkia@kia  VTag ;  ! -kia
+@R.PASSmia@+pass:@R.PASSmia@mia  VTag ;  ! -mia
+@R.PASSria@+pass:@R.PASSria@ria  VTag ;  ! -ria
+@R.PASSina@+pass:@R.PASSina@ina  VTag ;  ! -ina
+@R.PASSwhia@+pass:@R.PASSwhia@whia    VTag ;  ! -whia
+@R.PASSwhina@+pass:@R.PASSwhina@whina VTag ;  ! -whina
+@R.PASSkina@+pass:@R.PASSkina@kina    VTag ;  ! -kina
+                                      VTag ;
+
+LEXICON VTag
++V:0  # ;
+
+! ---------------------------------------------
+! cd .../xfsm_api/linux64/bin/
+! ./xfst
+! read lexc .../blocks/PassiveFlags-lexc.xfst
+! print lower-words | sort
+! print lower-words | sort

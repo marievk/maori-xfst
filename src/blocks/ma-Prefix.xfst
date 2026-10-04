@@ -1,15 +1,14 @@
-Multichar_Symbols
-    +V
-    @P.PREF.Ma@ @D.PREF.Ma@ @R.PREF.Ma@
+Multichar_Symbols +V @P.PREF.Ma@
 
-! ma- as prefix (historic: building statives in polonesian languages, not yet productive)
+! ma- as prefix (historic: building statives in Polynesian languages, not yet productive)
 
 LEXICON root
-@P.PREF.Ma@:@P.PREF.Ma@ma MaTerms;  ! for verbs which allow the ma-prefix (separate lexicon)
-                          MaTerms;  ! ... for making the prefix optional
+@P.PREF.Ma@ma MaTerms ; ! for verbs which allow the ma-prefix (separate lexicon)
+              MaTerms ; ! ... for making the prefix optional
 
 LEXICON MaTerms
 hora VTag ; ! V: "to spread out, display, make public" -> mahora V: "be spread out, laid out, served up"
+tika VTag ; ! V: "to be correct, true, upright" -> matika V: "to stand, rise to an erect position"
 
 LEXICON VTag
 +V:0   #;

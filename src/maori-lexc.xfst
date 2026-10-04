@@ -1,24 +1,24 @@
-! Labels:
 Multichar_Symbols +N +V +Det +Adj +Prep +Pron +Poss +Loc
       +Part +PartDir +PartMnr +PartLoc +Intj +Neg +Tns +Mde +Asp
       +sg +1sg +2sg +3sg +dl +1dl-incl +1dl-excl +1pl +1pl-incl +1pl-excl+pl +2pl +3pl
       caus+ +def +indef  +num +card +ord +prox1 +prox2 +nom +pass +q +afo
       ^[ ^] CV^R+ ^R Con Vow
-      @P.PREF.Tā@    @D.PREF.Tā@
-      @P.PREF.Whaka@ @D.PREF.Whaka@ @C.PREF@
+      @P.PREF.Tā@
+      @P.PREF.Whaka@ @D.PREF.Whaka@
       @P.PREF.Kai@   @D.PREF.Kai@   @R.PREF.Kai@
 
 ! Basic Branches -------------------------------------------------
 ! (3) Roots as basic branches:
 LEXICON Root
-Bases ;
-Nouns ;
-Verbs ;
-Statives ;
-Locatives ;
-Personals ;
-Particles ;
-Prefixes ;
+ Bases ;
+ Nouns ;
+ Verbs ;
+ Statives ;
+ Locatives ;
+ Personals ;
+ Particles ;
+ Prefixes ;
+! Continuation class: leading whitespace (nothing to see, space, continuation classs)
 
 ! (43) Prefix dispatching table
 LEXICON Prefixes
@@ -42,6 +42,7 @@ auau   NandV ; ! V: "be frequent, frequently, recurring", N: "frequency, rate"
 eke    NandV ; ! V: " climb, ascend, rise"
 hapū   NandV ; ! V: "be pregnant, conceived in the womb", N: "kinship group, clan, tribe, subtribe"
 haramai NandV ; ! V: "to come, arrive", N: "arrival, visit"
+hau    NandV ; ! V: "to exceed, be in excess", N: "excess"
 heke   NandV ; ! V: "descend, get off, disembark, fall, drip", N: "migration, emigrant"
 hiahia NandV ; ! V: "desire, wish for, want, crave, need", N: "desire, wish, need, want, aspiration, hope"
 hoa    NandV ; ! V: "to lay out, plan arrange", N: "friend, companion, mate"
@@ -139,9 +140,9 @@ LEXICON NandV
 ! 1. (Common) nouns -----------------------------------------
 ! (6) Separation between different noun forms:
 LEXICON Nouns
-Noun    ;
-PlNouns ;
-DateTime ;
+ Noun    ;
+ PlNouns ;
+ DateTime ;
 
 ! (7) Nouns:
 LEXICON Noun
@@ -241,9 +242,9 @@ tāura  NTag ; ! "postgraduate student, trainee"
 tāwhiti NTag ; ! "snare, trap, noose"
 tīma   NTag ; ! "team" (loan)
 upoko  NTag ; ! "head"
-uri    NTag ; ! "successor, offspring, descendant, relative" - also Adjective: "be dark in colour, dark green"
 uri    NTag ; ! "offspring, descendant, relative"
-waha   NTag ; ! "mouth, entrance, gate"
+uri    NTag ; ! "successor, offspring, descendant, relative" - also Adjective: "be dark in colour, dark green"
+waha   NTag ; ! "mouth, voice, entrance, gate"
 wairua NTag ; ! "spirit, soul"
 waka   NTag ; ! "canoe, vehicle, medium"
 whare  NTag ; ! "house, building, residence"
@@ -340,8 +341,16 @@ aroha VTag       ; ! "to love"
 aroha inaPassive ; ! -> arohaina
 aroha tiaPassive ; ! -> arohatia
 haere VTag ;       ! "walk, come, go"
+haere aPassive ;   ! -> haerea
+haere hiaPassive ; ! -> haerehia
+haere tiaPassive ; ! -> haeretia
 hahau VTag ;       ! "to seek"
 hahau riaPassive ; ! -> hahauria
+haka   VTag ; ! "dance, perform the haka"
+haka   aPassive   ; ! -> hakaa
+haka   iaPassive  ; ! -> hakahia
+haka   inaPassive ; ! -> hakaina
+haka   tiaPassive ; ! -> hakatia
 hanga VTag ;       ! "make, build, create"
 hanga aPassive;    ! -> hangaa
 haupapa VTag ;     ! "freeze"
@@ -361,6 +370,7 @@ hopu  VTag ;       ! "catch"
 hopu  kiaPassive;  ! -> hopukia -ina
 hopu VNkanga ;     ! "catch, seize", ->  hopukanga "catching, seizing"
 hopu kinaPassive ; ! -> hopukina "be caught/seized"
+hora   VTag ; ! "to spread out, display, make public"
 horo VTag ;        ! "to swallow"
 horo miaPassive  ; ! -> horomia
 horo ngiaPassive ; ! -> horongia
@@ -400,6 +410,7 @@ kī  NandV      ; ! V: "say, speak, express, mention, tell", N: "saying, word"
 kī  aPassive   ; ! -> kīa
 kī  iaPassive  ; ! -> kīia
 kī  tiaPassive ; ! -> kītia
+mahora VTag ; ! "be spread out, laid out, served"
 maka VTag ;     ! "to throw away" -> makā, rewrite: aa => ā
 maka aPassive ; ! -> makā, rewrite: aa => ā
 manako   VTag ;       ! "to set one's heart on, like, want"
@@ -408,6 +419,7 @@ manako   tiaPassive ; ! -> manakotia
 matenui VTag ;       ! "desire earnestly, show attention"
 matenui hiaPassive ; ! -> matenuihia
 matenui tiaPassive ; ! -> matenuitia
+matika VTag ; ! "to stand, rise to an erect position"
 mau  VNhanga ; ! V: "to take up, carry, take, bring" => mauhanga N: "record, documentation"
 mau  VTag ; ! "carry"
 mau  riaPassive; ! -> mauria
@@ -419,6 +431,7 @@ moe   VNnga  ; ! V: "sleep, dream, have sex, die" => -nga  moenga "bed, place fo
 momi  VTag   ; ! V: "kiss, suck, smoke"
 mono  VTag ;     ! "to calk"
 mono  aPassive ; ! -> monoa
+māriri   VTag ; ! "to be tranquillised, soothed", N: "peace, tranquillity"
 mātau VNranga ; ! V: "to know, acquainted with, understand" => -ranga mātauranga "knowledge, wisdom"
 ngau  VTag ;       ! "to act upon, affect, afflict"
 ngau  aPassive ;   !  -> ngaua
@@ -428,6 +441,7 @@ ope   VTag ;       ! "to gather"
 ope   hiaPassive ; ! -> opehia
 paa   VTag ;       ! "touch"
 paa   ngiaPassive; !->  paangia
+pae    VTag ; ! "to demolish, throw down"
 pai   VTag ;        ! "good"
 pai   ngiaPassive ; !  -> paingia
 paihere  VTag ;       ! "to bind in bundles"
@@ -447,6 +461,8 @@ pērā  VTag ;      ! V: "act like that, behave/treat in that way"
 pēwhea  VNtanga    ; ! V: "like what?, how?" -> peewheatanga "plan, method"
 pēwhea  tiaPassive ; ! -> pēwheatia
 pōnē  VTag ; ! "be in difficulties, troubled"
+pū    VTag ;       ! "to blow gently"
+pū    hiaPassive ; ! -> pūhia
 raranga VTag ;     ! "to knit (a native basket)" -> rangahia
 rere  VTag ;        ! "sail as a boat, and to flow as water"
 rere  ngiaPassive ; ! -> rerengia
@@ -530,70 +546,70 @@ wānanga tiaPassive ; ! -> wānangatia
 
 ! (40) Passive with different suffixes:
 LEXICON aPassive
-+Pass:a  VTag ;
++pass:a  VTag ;
 
 LEXICON naPassive
-+Pass:na VTag ;
++pass:na VTag ;
 
 LEXICON ngaPassive
-+Pass:nga VTag ;
++pass:nga VTag ;
 
 LEXICON iaPassive
-+Pass:ia VTag ;
++pass:ia VTag ;
 
 LEXICON tiaPassive
-+Pass:tia VTag ;
++pass:tia VTag ;
 
 LEXICON hiaPassive
-+Pass:hia VTag ;
++pass:hia VTag ;
 
 LEXICON ngiaPassive
-+Pass:ngia VTag ;
++pass:ngia VTag ;
 
 LEXICON kiaPassive
-+Pass:kia VTag ;
++pass:kia VTag ;
 
 LEXICON miaPassive
-+Pass:mia VTag ;
++pass:mia VTag ;
 
 LEXICON riaPassive
-+Pass:ria VTag ;
++pass:ria VTag ;
 
 LEXICON inaPassive
-+Pass:ina VTag ;
++pass:ina VTag ;
 
 LEXICON whiaPassive
-+Pass:whia VTag ;
++pass:whia VTag ;
 
 LEXICON whinaPassive
-+Pass:whina VTag ;
++pass:whina VTag ;
 
 LEXICON hinaPassive
-+Pass:hina VTag ;
++pass:hina VTag ;
 
 LEXICON kinaPassive
-+Pass:kina VTag ;
++pass:kina VTag ;
 
 LEXICON 0Passive
-+Pass:0 VTag ;
++pass:0 VTag ;
 
 ! (44) Whaka-prefix
 LEXICON WhakaVerbs
-tupu   VNranga ; ! V: "to grow, increase", whakatupu "cause to grow" => -ranga whakatupuranga "generation"
-taetae VTag ; ! V: "to arrive in groups", whakataetae: "to compete"
 aro    VTag ; ! V: "take notice of, pay attention to", whakaaro: "take notice of, pay attention to"
-paipai VTag ; ! V: whakapaipai: "make good, decorate"
-āe     VTag ; ! V: "to agree, give assent", whakaae (rewrite-rule): "accept, approve, authorise"
 haere  VTag ; ! V: "to go, depart, travel, come" -> whakahaere V: "to organise, cause to go,lead, execute"
-mārama VTag ; ! V: "be clear, light, easy" -> whakamārama V: "illuminate, explain, clarify"
-rongo  VTag ; ! V: "to hear, feel, smell, taste, perceive" -> whakarongo "to listen, hear, taste, smell, feel."
 keri   VTag ; ! "to dig, dig up, scratch out of the ground."
+mārama VTag ; ! V: "be clear, light, easy" -> whakamārama V: "illuminate, explain, clarify"
 mātaitai VTag ; ! V: " to be brackish, tasting of salt, salty"
+paipai VTag ; ! V: whakapaipai: "make good, decorate"
+rongo  VTag ; ! V: "to hear, feel, smell, taste, perceive" -> whakarongo "to listen, hear, taste, smell, feel."
+taetae VTag ; ! V: "to arrive in groups", whakataetae: "to compete"
+tupu   VNranga ; ! V: "to grow, increase", whakatupu "cause to grow" => -ranga whakatupuranga "generation"
+āe     VTag ; ! V: "to agree, give assent", whakaae (rewrite-rule): "accept, approve, authorise"
 
 ! (72) tā- as another causative prefix
 LEXICON TāVerbs
-piri   VTag ; ! "stick, keep close together" -> tāpiri "join, add, append"
 mahana VTag ; ! "be warm" -> tāmahana "warm up, reheat food"
+piri   VTag ; ! "stick, keep close together" -> tāpiri "join, add, append"
 uhi    VTag ; ! "cover" ->  tāuhi "cover"
 uwhiuwhi  VTag ; ! "shower, sprinkle, spray" -> tāuwhiuwhi "sprinkle"
 
@@ -602,7 +618,6 @@ uwhiuwhi  VTag ; ! "shower, sprinkle, spray" -> tāuwhiuwhi "sprinkle"
 ! to build nouns denoting a human agent
 LEXICON KaiVerbs
 ako    KaiAgentiv ; ! V: "learn, study, instruct, teach, advise" => kaiako "teacher"
-whakaako  KaiAgentiv ; ! like ako
 hoe    KaiAgentiv ; ! V: "to paddle, row" => kaihoe  "paddler, rowe"
 hoko   KaiAgentiv ; !  => kaihoko "seller"
 mahi   KaiAgentiv ; ! V:  "work, do, perform, make, raise (money)" => kaimahi "worker"
@@ -611,6 +626,7 @@ peita  KaiAgentiv ; ! V: "malen" => kaipeita "painter"
 tiaki  KaiAgentiv ; !  => kaitiaki "guardian, trustee"
 tito   KaiAgentiv ; !  => kaitito "composer"
 tuhi   KaiAgentiv ; ! V: "schreiben" => kaituhi "writer"
+whakaako  KaiAgentiv ; ! like ako
 whakahaere KaiAgentiv ; ! V: "organise, operate, lead, execute" => kaiwhakahaere "administrator, boss, director"
 
 ! (47) -kai branching: verb vs. noun
@@ -662,15 +678,15 @@ LEXICON VNmanga
 LEXICON VerbStems
 hoko  CloseVBrack ; ! "buy, sell, trade" -> hokohoko "trade, barter, export"
 kau   CloseVBrack ; ! "swim", kau(kau)
-muku  CloseVBrack ; ! "wipe", muku(muku)
-meke  CloseVBrack ; ! "to punch", meke(meke) also used as noun
-rahi  CloseVBrack ; ! "be large, big, numerous, great", rahirahi: "be thin, not thick, slim"
-oma   CloseVBrack ; ! ... omaoma: "run repeatedly"
-tō    CloseVBrack ; ! ... V: tōtō "to pull repeatedly"
-tā    CloseVBrack ; ! "strike, beat, thump, throw down, tackle." V: tātā "to strike repeatedly / beat"
-tau   CloseVBrack ; ! "to land, alight, come to rest, settle down", -> tautau "suspend, hang in clusters, dangle"
-raku  CloseVBrack ; ! "to scratch, scrape", -> rakuraku ! V: "to scratch, scrape, rake, harrow"
 kimo  CloseVBrack ; ! "to blink, wink" -> kimokimo, " to blink frequently, twinkle"
+meke  CloseVBrack ; ! "to punch", meke(meke) also used as noun
+muku  CloseVBrack ; ! "wipe", muku(muku)
+oma   CloseVBrack ; ! ... omaoma: "run repeatedly"
+rahi  CloseVBrack ; ! "be large, big, numerous, great", rahirahi: "be thin, not thick, slim"
+raku  CloseVBrack ; ! "to scratch, scrape", -> rakuraku ! V: "to scratch, scrape, rake, harrow"
+tau   CloseVBrack ; ! "to land, alight, come to rest, settle down", -> tautau "suspend, hang in clusters, dangle"
+tā    CloseVBrack ; ! "strike, beat, thump, throw down, tackle." V: tātā "to strike repeatedly / beat"
+tō    CloseVBrack ; ! ... V: tōtō "to pull repeatedly"
 
 ! (21) Tagging for ordinary & reduplicated verb form
 LEXICON CloseVBrack
@@ -679,16 +695,16 @@ LEXICON CloseVBrack
 
 ! (22) Verbs with full-stem reduplication verb => noun
 LEXICON VerbDupNomin
-meke  VDupNBrack ; ! meke "punch" => mekemeke "boxing" (also used as verb)
-hiki  VDupNBrack ; ! hiki "lift"  => hikihiki "weightlifting"
-kawe  VDupNBrack ; ! kawe "carry" => kawekawe "freight and cartage"
 ata   VDupNBrack ; ! ata  "reflection"=> ataata "video"
-wehe  VDupNBrack ; ! wehe "share" => wehewehe "division"
-tae   VDupNBrack ; ! tae "to arrive, achieve, reach" => taetae: "arrival"
-wae   VDupNBrack ; ! wae "to divide, part, separate" => waewae "foot, footprint."
-tui   VDupNBrack ; ! tui "to lace, sew" => tuitui "lashing, sewing."
+hiki  VDupNBrack ; ! hiki "lift"  => hikihiki "weightlifting"
 huru  VDupNBrack ; ! V: "to rise (of the sun)", huruhuru N: "diffused light"
+kawe  VDupNBrack ; ! kawe "carry" => kawekawe "freight and cartage"
+meke  VDupNBrack ; ! meke "punch" => mekemeke "boxing" (also used as verb)
 paru  VDupNBrack ; ! V: "be dirty, muddy, soiled", paruparu N: "dirt, soil, filth, mud"
+tae   VDupNBrack ; ! tae "to arrive, achieve, reach" => taetae: "arrival"
+tui   VDupNBrack ; ! tui "to lace, sew" => tuitui "lashing, sewing."
+wae   VDupNBrack ; ! wae "to divide, part, separate" => waewae "foot, footprint."
+wehe  VDupNBrack ; ! wehe "share" => wehewehe "division"
 
 ! (23) Tagging for ordinary verb & nominalization via reduplication
 LEXICON VDupNBrack
@@ -704,6 +720,7 @@ CV^R+:ConVow IniDupVerbs  ;
 ! (49) verbs that allow initial partial reduplication
 LEXICON IniDupVerbs
 kata VTag ; ! "laugh" -> kakata "frequent laughing"
+mahi VTag ; ! "work" ->"mamahi, over-work"
 patu VTag ; ! "trike, hit, beat, assault, kill" -> papatu "beat one another, clash, fight one another."
 peke VTag ; ! "to jump, leap over, leap, spring" -> pepeke — "o hasten something"
 rere VTag ; ! "to fly, escape" -> rerere — "to fly in all directions"
@@ -711,9 +728,8 @@ tahi VTag ; ! "clear away, set aside" -> tatahi "to be wide apart."
 taki VTag ; ! "to lead, challenge" -> tataki "to lead/guide in succession"
 tiro VTag ; ! "look at, inspect, examine"-> titiro "observe, survey"
 tuku VTag ; ! "to release, let go, give up" -> tutuku "to let down repeatedly"
-mahi VTag ; ! ->"mamahi, over-work"
 
-! Not included: final partial reduplikation (problem: runtime)
+! Not included: final partial reduplikation (runtime)
 
 ! (24) Verb tagging
 LEXICON VTag
@@ -724,10 +740,10 @@ LEXICON VTag
 ! Can be used as verbs,  but not with passive endings and cannot used the kai-prefix.
 ! Some can also be used as nouns.
 LEXICON Statives
-NeuterVerbs ;
-ParticipialAdjectives ;
-Adjectives ;
-Colours ;
+ NeuterVerbs ;
+ ParticipialAdjectives ;
+ Adjectives ;
+ Colours ;
 
 ! (61) Neuter Verbs: predicating a state, some do have an additional ...a- passive
 LEXICON NeuterVerbs
@@ -742,6 +758,7 @@ mahue  tiaPassive ; ! -> mahuetia
 maroke STag ;   ! "be dry, arid"
 mataku STag ;   ! "be afraid, frightened, alarmed"
 mate   STag ;   ! "be sick, dead"
+māroa  STag ;   ! "be expressionless, unenthusiastic"
 oti    STag ;   ! "be finished, be complete "
 riro   STag ;   ! "be taken"
 tae    STag ;   ! "be able, be possible"
@@ -776,6 +793,7 @@ motu  VandAdj ; ! "cut"
 mutu  VandAdj ; ! "ended"
 mākūkū VandAdj ; ! "be somewhat moist, wettish, damp"
 mōhio  VandAdj ; ! "be accustomed, known, skilful, wise"
+ngā  VandAdj ; ! V: "to take breath", Adj:"satisfied"
 ngaro  VandAdj ; ! "lost, destroyed"
 ngenge VandAdj ; ! "tired"
 ngonga VandAdj ; ! "beaten"
@@ -831,6 +849,8 @@ roa   AdjTag ; ! "long/tall"
 roroa AdjTag ; ! "very long/tall"
 tapu  AdjTag ; ! "be sacred, prohibited, restricted"
 tapu  NTag ;   ! "restriction, prohibition "
+tinana AdjTag ; ! "real, actual, actually, really"
+tinana NTag ;   ! "self, person, torso"
 toa   AdjTag ; ! Adj: "be brave, bold, victorious, experienced, accomplished, adept, competent, skilful, capable"
 toa   NandV  ; ! also N, V
 wera  AdjTag ; ! "hot"
@@ -873,31 +893,31 @@ LEXICON AdjTag
 ! 4. Locatives with location words and locative nouns ---------------------------------
 ! (64) Branching: Locationals vs. time constructs
 LEXICON Locatives
-Locationals ;
-TimeLocations ;
+ Locationals ;
+ TimeLocations ;
 
 ! (38) Locatives, positions in space, usually allow whaka- as a directional prefix (cause/move toward ...)
 LEXICON Locationals
-mua LocTag ; ! "the past, former(ly), first", whakamua: "forward, ahead, towards the front"
-runga  LocTag ; ! "up, on top", whakarunga "upwards, up, towards the top"
-muri   LocTag ; ! "the rear, behind, at the back of", whakamuri: "backwards, behind, towards the rear."
 mauī   LocTag ; ! "on the left hand, left side",whakamauī: "towards the left"
+mua LocTag ; ! "the past, former(ly), first", whakamua: "forward, ahead, towards the front"
+muri   LocTag ; ! "the rear, behind, at the back of", whakamuri: "backwards, behind, towards the rear."
+raro  LocTag ; !  "the bottom, the underside, under", whakararo: "downwards, northwards"
 runga  LocTag ; ! "above, over, up, upwards", whakarunga: "south, southern, upper, upwards"
-waho   LocTag ; ! "the outside, out, the open sea, offshore", whakawaho: "outwards, out, seawards"
+runga  LocTag ; ! "up, on top", whakarunga "upwards, up, towards the top"
 @D.PREF.Whaka@tai       LocTag ; ! "the sea, coast" ! whaka-prefix disallowed
 @D.PREF.Whaka@waenganui LocTag ; ! "the middle, among, midst, amid, between"
-raro  LocTag ; !  "the bottom, the underside, under", whakararo: "downwards, northwards"
+waho   LocTag ; ! "the outside, out, the open sea, offshore", whakawaho: "outwards, out, seawards"
 
 ! (65) Locations, positions in time, usually dont take the whaka-prefix
 LEXICON TimeLocations
+aoake   PartLocTag ; ! "two days after tomorrow"
+apōpō   PartLocTag ; ! "tomorrow"
 hea   PartLocTag ; ! "any/other place, everywhere"
-pērā  PartLocTag ; ! "in that direction, there, that way"
-āianei  PartLocTag ; ! "now, today, at present, soon"
 ianaianei PartLocTag ; ! "today"
 inanahi PartLocTag ; ! "yesterday"
-apōpō   PartLocTag ; ! "tomorrow"
-aoake   PartLocTag ; ! "two days after tomorrow"
 inapō   PartLocTag ; ! "last night"
+pērā  PartLocTag ; ! "in that direction, there, that way"
+āianei  PartLocTag ; ! "now, today, at present, soon"
 
 ! (39) Tagging for locatives
 LEXICON LocTag
@@ -906,10 +926,10 @@ LEXICON LocTag
 ! 5. Personals  ---------------------------------
 ! (66) Personals inluding personal/possessive pronouns and numbers
 LEXICON Personals
-PersPronouns ;
-PossPronouns ;
-Numerals ;
-OtherPersonals ;
+ PersPronouns ;
+ PossPronouns ;
+ Numerals ;
+ OtherPersonals ;
 
 ! (67) Personal pronouns
 LEXICON PersPronouns
@@ -984,22 +1004,22 @@ LEXICON NumTag
 ! (67) Other Personals, including  interrogative pronouns and personal nouns
 LEXICON OtherPersonals
 aha+Pron+q:aha   # ; ! "what?"
-wai+Pron+q:wai   # ; ! "who?"
 hea+Pron+q:hea   # ; ! "which? / where?"
-whai+Pron+q:whai # ; ! "which? / what one?"
 hia+Pron+q:hia   # ; ! "how many? how long?"
+wai+Pron+q:wai   # ; ! "who?"
+whai+Pron+q:whai # ; ! "which? / what one?"
 
 ! 6. Particles -------------------------------
 ! (29) Particles: Distinction between different types:
 LEXICON Particles
-Dets ;
-PartManner ;
-PartDirection ;
-PartLocation ;
-Parts ;
-TnsAspMde ;
-Prepositions ;
-Interjects ;
+ Dets ;
+ PartManner ;
+ PartDirection ;
+ PartLocation ;
+ Parts ;
+ TnsAspMde ;
+ Prepositions ;
+ Interjects ;
 
 ! (30) Determiners:
 LEXICON Dets
@@ -1100,30 +1120,38 @@ LEXICON Parts
 ai   PartTag ; ! "wieder" (Harawima: Adverbs p. 48 f.)
 anō  PartTag ; ! "wieder" (Harawima: Adverbs p. 48 f.)
 hoki PartTag ; ! "auch"
+ke   PartTag ; ! "already, long ago, instead"
 ki   PartTag ; ! "to, into, towards, on to, upon"
 ma   PartTag ; ! "and others" (plural indicator)
 mā   PartTag ; ! "made by, via, through"
+mō   PartTag ; ! "for, about, concerning"
 nā   PartTag ; ! "of, belonging to"
+nō   PartTag ; ! "belonging to, from"
 oti  PartTag ; ! "but, then, so, exactly, indeed"
-pea  PartTag ; ! "vielleicht"
-tū   PartTag ; ! "manner, sort, type of"
 oti  PartTag ; ! "then, so, exactly, indeed"
+pea  PartTag ; ! "vielleicht"
+tā   PartTag ; ! "has, have, owns"
+tū   PartTag ; ! "manner, sort, type of"
+ā    PartTag ; ! "belongs to, from, attached to"
+ō    PartTag ; ! "belongs to, from, attached to"
 
 ! (35) Tagging: Particles
 LEXICON PartTag
 +Part:0 # ;
 
 ! (37) Interjections
-! other words which do not belong to the other classes,
+! Phrases and other words which do not belong to the other classes.
 LEXICON Interjects
 a      IntjTag ; ! "well, well then."
 ā      IntjTag ; ! "yes" (variation of āe)
 āe     IntjTag ; ! "yes"
 aea    IntjTag ; ! "it would be better"
+āna    IntjTag ; ! "yes, indeed, agreed" and: "no" in answer to a negative question.
 ara    IntjTag ; ! "heck, look" (surprise or amazement)
 aua    IntjTag ; ! "I don't know, don't ask"
 aua    NegTag  ; ! "do not, don't - shortened form of kaua"
 ehē    NegTag  ; ! "no"
+ē      IntjTag ; !  concludes a line or the end of a traditional song
 ira    IntjTag ; ! "look! look there!"
 kaitoa IntjTag ; ! "It serves you right!"
 kaua   NegTag  ; ! "do not, don't"
@@ -1150,7 +1178,7 @@ END
 ! cd .../xfsm_api/linux64/bin
 ! ./xfst
 ! clear stack
-! read lexc < .../maori-lexc.xfst
+! read lexc < .../maori-lexc09.xfst
 ! print lower-words
 ! print upper-words
 ! ---------------------------------------------

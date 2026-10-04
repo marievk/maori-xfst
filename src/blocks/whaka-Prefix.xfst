@@ -1,8 +1,5 @@
-Multichar_Symbols
-       +V +Loc
-       @P.PREF.Whaka@
-       @D.PREF.Whaka@
-       @C.PREF@
+Multichar_Symbols +V +Loc
+       @P.PREF.Whaka@ @D.PREF.Whaka@
 
 ! whaka- prefix as causative for verbs and with a directional function for locatives
 

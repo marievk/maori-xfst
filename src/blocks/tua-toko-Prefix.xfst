@@ -1,8 +1,4 @@
-Multichar_Symbols
-    card+ ord+ pers+
-    @P.PREF.Tua@
-    @D.PREF.Tua@
-    @R.PREF.Tua@
+Multichar_Symbols card+ ord+ pers+ +Num
 
 ! tua- functions as the ordinal marker, toko- as personal marker
 ! tua + rua  -> tuarua "second", -> tokorua "two (people), pair, couple"

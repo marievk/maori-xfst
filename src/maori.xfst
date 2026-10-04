@@ -1,5 +1,5 @@
 clear stack ;
-set show-flags OFF;
+!set show-flags OFF;
 
 ! (1) restrict alphabet
 define C [h | k | m | n | ng | p | r | t | w | wh] ;
@@ -10,9 +10,9 @@ define Syllable (C) V (V) ;
 define Word Syllable+ ;
 
 ! Change path, if required:
-read lexc < maori-lexc.xfst ;
+read lexc < /home/mvk/sose26/xfsm_api/maori/maori-lexc09.xfst ;
 
-! Replacement rule: full reduplication: ^[{kau}^2^] => kaukau
+! Replacement rule: full reduplication, (kau)²: ^[{kau}^2^] => kaukau
 compile-replace lower ;
 
 !(45) Rewrite rule: aāe => aae (whakaae)
@@ -32,9 +32,11 @@ define CopyVow [Vow -> a || _ ? a ,, Vow -> e || _ ? e ,,
 ! double comma seperates the whole rule (one: just one side)
 read regex CopyCon .o. CopyVow;
 
+! Reverse the stack order and build one net:
 turn stack ;
 compose net ;
 
+! Example: "wait a second ..."
 apply up taihoa ;
 
 ! ---------------------------------------------

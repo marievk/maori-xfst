@@ -10,14 +10,13 @@ define Syllable (C) V (V) ;
 define Word Syllable+ ;
 
 ! Change path, if required:
-read lexc < /home/mvk/sose26/xfsm_api/maori/maori-lexc09.xfst ;
+read lexc < .../maori-lexc.xfst ;
 
 ! Replacement rule: full reduplication, (kau)²: ^[{kau}^2^] => kaukau
 compile-replace lower ;
 
 !(45) Rewrite rule: aāe => aae (whakaae)
 read regex ({aāe} -> {aae}) ;
-!read regex ({aāe} -> {aāe} .o. ... ) ;v
 
 ! (57.) Rewrite aa=>ā  (passive: maka => makā, NOT makaa), position: word ending
 read regex ({aa} -> ā || _ .#. ) ;
@@ -36,7 +35,7 @@ read regex CopyCon .o. CopyVow;
 turn stack ;
 compose net ;
 
-! Example: "wait a second ..."
+! Example: "wait a second ..." (taihoa+Intj)
 apply up taihoa ;
 
 ! ---------------------------------------------

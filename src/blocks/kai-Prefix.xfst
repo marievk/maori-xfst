@@ -9,8 +9,8 @@ LEXICON root
                                 KaiVerbs ;
 
 LEXICON KaiVerbs
-peita  KaiAgentiv ;  ! V: "to paint" (loan) => kaipeita "Maler/in"
-tuhi   KaiAgentiv ;  ! V: "schreiben" => kaituhi "Schriftsteller/in, Autor/in"
+peita  KaiAgentiv ;  ! V: "to paint" (loan) => kaipeita "painter"
+tuhi   KaiAgentiv ;  ! V: "to write" => kaituhi "writer, author"
 
 LEXICON KaiAgentiv
 @R.PREF.Kai@ NTag ;

@@ -1,3 +1,4 @@
+! Labels:
 Multichar_Symbols +N +V +Det +Adj +Prep +Pron +Poss +Loc
       +Part +PartDir +PartMnr +PartLoc +Intj +Neg +Tns +Mde +Asp
       +sg +1sg +2sg +3sg +dl +1dl-incl +1dl-excl +1pl +1pl-incl +1pl-excl+pl +2pl +3pl
@@ -622,10 +623,10 @@ hoe    KaiAgentiv ; ! V: "to paddle, row" => kaihoe  "paddler, rowe"
 hoko   KaiAgentiv ; !  => kaihoko "seller"
 mahi   KaiAgentiv ; ! V:  "work, do, perform, make, raise (money)" => kaimahi "worker"
 mahi   aPassive ; ! V: -> mahia "to be worked on/through"
-peita  KaiAgentiv ; ! V: "malen" => kaipeita "painter"
+peita  KaiAgentiv ; ! V: "paint" => kaipeita "painter"
 tiaki  KaiAgentiv ; !  => kaitiaki "guardian, trustee"
 tito   KaiAgentiv ; !  => kaitito "composer"
-tuhi   KaiAgentiv ; ! V: "schreiben" => kaituhi "writer"
+tuhi   KaiAgentiv ; ! V: "to write" => kaituhi "writer, author"
 whakaako  KaiAgentiv ; ! like ako
 whakahaere KaiAgentiv ; ! V: "organise, operate, lead, execute" => kaiwhakahaere "administrator, boss, director"
 
@@ -1043,7 +1044,6 @@ rā+Det+Dis+adv:rā     # ; ! "over there"
 ! aforementioned (already mentioned before): no adverb form
 taua+Det+afo+sg:taua  # ; ! "that, the"
 aua+Det+afo+sg:aua    # ; ! "those"
-!TB Zuordnung prüfen
 pēnei+Det:pēnei    # ; ! "like this, if, in that case."
 pēna+Det:pēnā      # ; ! "like that, if"
 
